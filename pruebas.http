@@ -1,0 +1,57 @@
+### Obtener todos los modelos
+GET http://localhost:3000/modelos
+
+### Crear un nuevo modelo
+POST http://localhost:3000/modelos
+Content-Type: application/json
+
+{
+  "nombre": "Modelo Deluxe",
+  "descripcion": "Con piezas articuladas"
+}
+
+### Obtener todas las piezas
+GET http://localhost:3000/piezas
+
+### Crear una nueva pieza
+POST http://localhost:3000/piezas
+Content-Type: application/json
+
+{
+  "tipo": "Brazo",
+  "numero_serie": "P003",
+  "color": "Negro",
+  "material": "Metal",
+  "fecha_fabricacion": "2026-05-23",
+  "costo": 75.00
+}
+
+### Filtrar piezas por tipo y color
+GET http://localhost:3000/piezas?tipo=Brazo&color=Negro
+
+### Obtener maniquíes terminados
+GET http://localhost:3000/maniquies
+
+### Crear un maniquí terminado
+POST http://localhost:3000/maniquies
+Content-Type: application/json
+
+{
+  "numero_serie": "M002",
+  "modelo_id": 2,
+  "fecha_fabricacion": "2026-05-23",
+  "costo_total": 320.00,
+  "observaciones": "Segunda unidad"
+}
+
+### Obtener ensamblajes
+GET http://localhost:3000/ensamblajes
+
+### Crear un ensamblaje
+POST http://localhost:3000/ensamblajes
+Content-Type: application/json
+
+{
+  "maniqui_id": 1,
+  "pieza_id": 2
+}
